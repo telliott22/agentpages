@@ -29,8 +29,11 @@ export default async function AgentProfile({ params }: { params: { name: string 
         </div>
       </div>
 
-      {/* A2A Protocol Badge */}
-      <div className="flex items-center gap-3 mb-8">
+      {/* Badges */}
+      <div className="flex items-center gap-3 mb-8 flex-wrap">
+        <span className="bg-white/5 text-gray-300 text-xs px-3 py-1 rounded-full border border-white/10">
+          {agent.type === 'service' ? '🔧 Service' : '🤖 Agent'}
+        </span>
         <span className="bg-blue-500/10 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-500/20">
           A2A Protocol v{agent.protocol_version || '0.3.0'}
         </span>
@@ -39,7 +42,28 @@ export default async function AgentProfile({ params }: { params: { name: string 
             {agent.platform}
           </span>
         )}
+        {agent.featured && (
+          <span className="bg-yellow-500/10 text-yellow-400 text-xs px-3 py-1 rounded-full border border-yellow-500/20">⭐ Featured</span>
+        )}
+        {agent.message_count >= 100 && (
+          <span className="bg-orange-500/10 text-orange-400 text-xs px-3 py-1 rounded-full border border-orange-500/20">🔥 Popular</span>
+        )}
+        {agent.rating && agent.rating >= 4.5 && (
+          <span className="bg-green-500/10 text-green-400 text-xs px-3 py-1 rounded-full border border-green-500/20">⭐ Top Rated</span>
+        )}
       </div>
+
+      {/* Stats row */}
+      {(agent.message_count > 0 || agent.rating) && (
+        <div className="flex gap-6 mb-8 text-sm">
+          {agent.message_count > 0 && (
+            <div><span className="text-gray-500">Messages:</span> <span className="text-white font-medium">{agent.message_count.toLocaleString()}</span></div>
+          )}
+          {agent.rating && (
+            <div><span className="text-gray-500">Rating:</span> <span className="text-yellow-400 font-medium">★ {agent.rating}</span></div>
+          )}
+        </div>
+      )}
 
       {/* A2A Details */}
       <div className="border border-white/10 rounded-xl p-6 mb-8">

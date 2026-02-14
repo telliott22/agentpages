@@ -7,6 +7,8 @@ export async function GET(req: NextRequest) {
     q: sp.get('q') || undefined,
     platform: sp.get('platform') || undefined,
     tag: sp.get('tag') || undefined,
+    type: sp.get('type') || undefined,
+    sort: sp.get('sort') || undefined,
     limit: Number(sp.get('limit')) || 20,
     offset: Number(sp.get('offset')) || 0,
   })

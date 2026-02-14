@@ -103,6 +103,10 @@ export interface AgentCard {
   contact?: string;
   likes?: string[];
   avatar_url?: string;
+  type: 'agent' | 'service';
+  message_count: number;
+  rating?: number;
+  featured: boolean;
   verified: boolean;
   last_seen_at?: string;
   created_at: string;
@@ -110,11 +114,17 @@ export interface AgentCard {
 }
 
 export async function getAgents(opts?: {
-  q?: string; platform?: string; tag?: string; limit?: number; offset?: number;
+  q?: string; platform?: string; tag?: string; type?: string;
+  limit?: number; offset?: number; sort?: string;
 }): Promise<AgentCard[]> {
-  let params = "order=created_at.desc";
+  // Default sort: featured first, then by popularity score (message_count desc, rating desc)
+  const sortOrder = opts?.sort === 'newest' ? 'created_at.desc'
+    : opts?.sort === 'name' ? 'name.asc'
+    : 'featured.desc,message_count.desc.nullslast,rating.desc.nullslast,created_at.desc';
+  let params = `order=${sortOrder}`;
   if (opts?.platform) params += `&platform=eq.${encodeURIComponent(opts.platform)}`;
   if (opts?.tag) params += `&tags=cs.{${encodeURIComponent(opts.tag)}}`;
+  if (opts?.type) params += `&type=eq.${encodeURIComponent(opts.type)}`;
   if (opts?.limit) params += `&limit=${opts.limit}`;
   if (opts?.offset) params += `&offset=${opts.offset}`;
   if (opts?.q) {
@@ -139,10 +149,28 @@ export async function deleteAgent(name: string): Promise<boolean> {
   return del("agent_cards", `name=eq.${encodeURIComponent(name)}`);
 }
 
+export async function getFeatured(): Promise<AgentCard[]> {
+  return query<AgentCard>("agent_cards", "featured=eq.true&order=message_count.desc.nullslast&limit=5");
+}
+
+export async function getPopularServices(limit = 5): Promise<AgentCard[]> {
+  return query<AgentCard>("agent_cards", `type=eq.service&order=message_count.desc.nullslast,rating.desc.nullslast&limit=${limit}`);
+}
+
+export async function getActiveAgents(limit = 5): Promise<AgentCard[]> {
+  return query<AgentCard>("agent_cards", `type=eq.agent&order=last_seen_at.desc.nullslast,message_count.desc.nullslast&limit=${limit}`);
+}
+
+export async function getRecentAgents(limit = 5): Promise<AgentCard[]> {
+  return query<AgentCard>("agent_cards", `order=created_at.desc&limit=${limit}`);
+}
+
 export async function getStats() {
-  const agents = await query<AgentCard>("agent_cards", "select=id,skills,platform");
+  const agents = await query<AgentCard>("agent_cards", "select=id,skills,platform,type");
   const totalAgents = agents.length;
   const totalSkills = agents.reduce((sum, a) => sum + (Array.isArray(a.skills) ? a.skills.length : 0), 0);
   const platforms = [...new Set(agents.map(a => a.platform).filter(Boolean))];
-  return { totalAgents, totalSkills, platforms: platforms.length, platformList: platforms };
+  const agentCount = agents.filter(a => a.type === 'agent').length;
+  const serviceCount = agents.filter(a => a.type === 'service').length;
+  return { totalAgents, totalSkills, platforms: platforms.length, platformList: platforms, agentCount, serviceCount };
 }

@@ -17,6 +17,10 @@ CREATE TABLE IF NOT EXISTS agent_cards (
   contact TEXT,
   likes TEXT[],
   avatar_url TEXT,
+  type TEXT DEFAULT 'agent', -- 'agent' or 'service'
+  message_count INTEGER DEFAULT 0,
+  rating NUMERIC(3,2),
+  featured BOOLEAN DEFAULT false,
   verified BOOLEAN DEFAULT false,
   last_seen_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ DEFAULT NOW(),

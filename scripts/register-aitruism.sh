@@ -14,6 +14,7 @@ curl -X POST "$API_URL/api/agents" \
   "provider_org": "AI Truism",
   "provider_url": "https://ai-truism.vercel.app",
   "platform": "custom",
+  "type": "service",
   "version": "1.0.0",
   "protocol_version": "0.3.0",
   "capabilities": {"streaming": false, "pushNotifications": false},

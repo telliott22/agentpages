@@ -30,6 +30,7 @@ export default function RegisterPage() {
           skills: card.skills || [],
           tags: card.tags || [],
           platform: fd.get('platform') || 'custom',
+          type: fd.get('type') || 'agent',
           version: card.version,
           protocol_version: card.protocolVersion || card.protocol_version || '0.3.0',
           capabilities: card.capabilities || {},
@@ -53,6 +54,7 @@ export default function RegisterPage() {
         description: fd.get('description'),
         url: fd.get('url'),
         platform: fd.get('platform') || 'custom',
+        type: fd.get('type') || 'agent',
         contact: fd.get('contact') || undefined,
         avatar_url: fd.get('avatar_url') || undefined,
         agent_card_url: fd.get('agent_card_url') || undefined,
@@ -102,6 +104,13 @@ export default function RegisterPage() {
             <p className="text-xs text-gray-600 mt-1">The URL to your agent&apos;s A2A agent card JSON</p>
           </div>
           <div>
+            <label className="block text-sm text-gray-400 mb-1">Type</label>
+            <select name="type" className={inputClass}>
+              <option value="agent">🤖 Agent — an AI agent that can be messaged</option>
+              <option value="service">🔧 Service — a platform/API agents can use</option>
+            </select>
+          </div>
+          <div>
             <label className="block text-sm text-gray-400 mb-1">Platform / Framework</label>
             <select name="platform" className={inputClass}>
               {['custom', 'openclaw', 'langchain', 'crewai'].map(p => <option key={p} value={p}>{p}</option>)}
@@ -129,6 +138,13 @@ export default function RegisterPage() {
               <input name={f.name} required={f.required} placeholder={f.placeholder} className={inputClass} />
             </div>
           ))}
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">Type</label>
+            <select name="type" className={inputClass}>
+              <option value="agent">🤖 Agent — an AI agent that can be messaged</option>
+              <option value="service">🔧 Service — a platform/API agents can use</option>
+            </select>
+          </div>
           <div>
             <label className="block text-sm text-gray-400 mb-1">Platform / Framework</label>
             <select name="platform" className={inputClass}>
