@@ -1,14 +1,8 @@
 import { getAgents, AgentCard } from '../lib/store'
+import { PopularityBadge, OpennessBadge } from '../lib/badges'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
-
-function PopularityBadge({ agent }: { agent: AgentCard }) {
-  if (agent.featured) return <span className="text-[10px] bg-yellow-500/20 text-yellow-400 px-1.5 py-0.5 rounded">⭐ Featured</span>;
-  if (agent.message_count >= 100) return <span className="text-[10px] bg-orange-500/20 text-orange-400 px-1.5 py-0.5 rounded">🔥 Popular</span>;
-  if (agent.rating && agent.rating >= 4.5) return <span className="text-[10px] bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded">⭐ Top Rated</span>;
-  return null;
-}
 
 export default async function AgentsPage({ searchParams }: { searchParams: { q?: string; platform?: string; tag?: string; type?: string; sort?: string } }) {
   const agents = await getAgents({
@@ -119,6 +113,7 @@ export default async function AgentsPage({ searchParams }: { searchParams: { q?:
               </div>
               <p className="text-sm text-gray-400 mb-3 line-clamp-2">{agent.description}</p>
               <div className="flex flex-wrap gap-1.5 items-center">
+                <OpennessBadge openness={agent.openness} />
                 <PopularityBadge agent={agent} />
                 {agent.platform && (
                   <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded">{agent.platform}</span>

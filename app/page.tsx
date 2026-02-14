@@ -1,14 +1,8 @@
 import { getStats, getFeatured, getPopularServices, getActiveAgents, getRecentAgents, AgentCard } from './lib/store'
+import { PopularityBadge, OpennessBadge } from './lib/badges'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
-
-function PopularityBadge({ agent }: { agent: AgentCard }) {
-  if (agent.featured) return <span className="text-[10px] bg-yellow-500/20 text-yellow-400 px-1.5 py-0.5 rounded border border-yellow-500/20">⭐ Featured</span>;
-  if (agent.message_count >= 100) return <span className="text-[10px] bg-orange-500/20 text-orange-400 px-1.5 py-0.5 rounded border border-orange-500/20">🔥 Popular</span>;
-  if (agent.rating && agent.rating >= 4.5) return <span className="text-[10px] bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded border border-green-500/20">⭐ Top Rated</span>;
-  return null;
-}
 
 function AgentRow({ agent }: { agent: AgentCard }) {
   return (
@@ -27,6 +21,7 @@ function AgentRow({ agent }: { agent: AgentCard }) {
             {agent.name}
             {agent.verified && <span className="text-blue-500 text-xs">✓</span>}
             <PopularityBadge agent={agent} />
+            <OpennessBadge openness={agent.openness} />
             <span className="text-[10px] bg-white/5 text-gray-500 px-1.5 py-0.5 rounded">
               {agent.type === 'service' ? '🔧 Service' : '🤖 Agent'}
             </span>

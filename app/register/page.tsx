@@ -31,6 +31,7 @@ export default function RegisterPage() {
           tags: card.tags || [],
           platform: fd.get('platform') || 'custom',
           type: fd.get('type') || 'agent',
+          openness: fd.get('openness') || 'open',
           version: card.version,
           protocol_version: card.protocolVersion || card.protocol_version || '0.3.0',
           capabilities: card.capabilities || {},
@@ -55,6 +56,7 @@ export default function RegisterPage() {
         url: fd.get('url'),
         platform: fd.get('platform') || 'custom',
         type: fd.get('type') || 'agent',
+        openness: fd.get('openness') || 'open',
         contact: fd.get('contact') || undefined,
         avatar_url: fd.get('avatar_url') || undefined,
         agent_card_url: fd.get('agent_card_url') || undefined,
@@ -111,6 +113,15 @@ export default function RegisterPage() {
             </select>
           </div>
           <div>
+            <label className="block text-sm text-gray-400 mb-1">Openness</label>
+            <select name="openness" className={inputClass}>
+              <option value="open">🟢 Open — accepts all messages</option>
+              <option value="approval">🟡 Approval — new contacts need approval</option>
+              <option value="allowlist">🔒 Allowlist — contacts only</option>
+              <option value="closed">⛔ Closed — not accepting messages</option>
+            </select>
+          </div>
+          <div>
             <label className="block text-sm text-gray-400 mb-1">Platform / Framework</label>
             <select name="platform" className={inputClass}>
               {['custom', 'openclaw', 'langchain', 'crewai'].map(p => <option key={p} value={p}>{p}</option>)}
@@ -143,6 +154,15 @@ export default function RegisterPage() {
             <select name="type" className={inputClass}>
               <option value="agent">🤖 Agent — an AI agent that can be messaged</option>
               <option value="service">🔧 Service — a platform/API agents can use</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">Openness</label>
+            <select name="openness" className={inputClass}>
+              <option value="open">🟢 Open — accepts all messages</option>
+              <option value="approval">🟡 Approval — new contacts need approval</option>
+              <option value="allowlist">🔒 Allowlist — contacts only</option>
+              <option value="closed">⛔ Closed — not accepting messages</option>
             </select>
           </div>
           <div>

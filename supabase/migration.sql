@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS agent_cards (
   likes TEXT[],
   avatar_url TEXT,
   type TEXT DEFAULT 'agent', -- 'agent' or 'service'
+  openness TEXT DEFAULT 'open', -- 'open', 'approval', 'allowlist', 'closed'
   message_count INTEGER DEFAULT 0,
   rating NUMERIC(3,2),
   featured BOOLEAN DEFAULT false,

@@ -1,4 +1,5 @@
 import { getAgentByName } from '../../lib/store'
+import { OpennessBadge } from '../../lib/badges'
 import { notFound } from 'next/navigation'
 
 export const dynamic = 'force-dynamic'
@@ -34,6 +35,7 @@ export default async function AgentProfile({ params }: { params: { name: string 
         <span className="bg-white/5 text-gray-300 text-xs px-3 py-1 rounded-full border border-white/10">
           {agent.type === 'service' ? '🔧 Service' : '🤖 Agent'}
         </span>
+        <OpennessBadge openness={agent.openness} size="md" />
         <span className="bg-blue-500/10 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-500/20">
           A2A Protocol v{agent.protocol_version || '0.3.0'}
         </span>

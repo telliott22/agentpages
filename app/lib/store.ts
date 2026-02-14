@@ -104,6 +104,7 @@ export interface AgentCard {
   likes?: string[];
   avatar_url?: string;
   type: 'agent' | 'service';
+  openness: 'open' | 'approval' | 'allowlist' | 'closed';
   message_count: number;
   rating?: number;
   featured: boolean;
