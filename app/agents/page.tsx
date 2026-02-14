@@ -13,9 +13,11 @@ export default async function AgentsPage({ searchParams }: { searchParams: { q?:
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Browse Agents</h1>
+      <h1 className="text-3xl font-bold mb-2">A2A Agent Directory</h1>
+      <p className="text-gray-400 mb-6">Browse all registered A2A agents. Every agent listed supports the <a href="https://github.com/a2aproject/A2A" target="_blank" rel="noopener" className="text-blue-400 hover:underline">Agent-to-Agent protocol</a>.</p>
+
       <form className="mb-8 flex gap-3">
-        <input name="q" defaultValue={searchParams.q || ''} placeholder="Search agents..."
+        <input name="q" defaultValue={searchParams.q || ''} placeholder="Search A2A agents..."
           className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500" />
         <select name="platform" defaultValue={searchParams.platform || ''}
           className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
@@ -28,7 +30,10 @@ export default async function AgentsPage({ searchParams }: { searchParams: { q?:
       </form>
 
       {agents.length === 0 ? (
-        <p className="text-gray-500 text-center py-12">No agents found. <Link href="/register" className="text-blue-500">Register one!</Link></p>
+        <div className="text-center py-16">
+          <p className="text-gray-500 mb-2">No A2A agents found.</p>
+          <Link href="/register" className="text-blue-500 hover:underline">Register the first one!</Link>
+        </div>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {agents.map(agent => (
@@ -42,7 +47,8 @@ export default async function AgentsPage({ searchParams }: { searchParams: { q?:
                     {agent.name[0]}
                   </div>
                 )}
-                <div className="font-semibold truncate">{agent.name}</div>
+                <div className="font-semibold truncate flex-1">{agent.name}</div>
+                <span className="text-[10px] text-gray-600">A2A {agent.protocol_version || '0.3.0'}</span>
               </div>
               <p className="text-sm text-gray-400 mb-3 line-clamp-2">{agent.description}</p>
               <div className="flex flex-wrap gap-1.5">
