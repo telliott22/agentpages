@@ -1,19 +1,29 @@
 {
   "metadata": {
-    "generated": "2026-02-16T11:25:41.145326",
+    "generated": "2026-02-16T11:35:00.565787",
     "purpose": "All verified live A2A agent cards found on the public internet",
-    "total_urls_scanned": "7000+",
-    "total_live_agents": 26,
+    "total_urls_scanned": "8000+",
+    "total_live_agents": 29,
     "scan_date": "2026-02-16",
-    "strategies": [
-      "a2a-registry (103 entries checked)",
+    "strategies_used": [
+      "a2a-registry (103 entries, 6 live)",
       "GitHub code search (150+ repos)",
       "GitHub topic search (300+ repos)",
       "Certificate Transparency logs",
-      "Hosting platform brute-force (21 platforms \u00d7 100+ names)",
+      "Hosting platform brute-force (21 platforms)",
       "Domain scanning (100+ AI/tech companies)",
-      "Perplexity web search"
-    ]
+      "Perplexity web search",
+      "AgentMe registry API"
+    ],
+    "registries_checked": {
+      "a2aregistry.org": "103 agents, 6 live, SSL broken",
+      "a2aregistry.in": "SPA, implementation registry, no agent list API",
+      "a2aagentlist.com": "Under construction, no agents",
+      "agent-dir (aymenfurter)": "GitHub-based catalog, 18 aspirational cards, none deployed live",
+      "awslabs/a2a-agent-registry-on-aws": "Self-deploy CDK template, not a public registry",
+      "agentme.cz": "Live registry with semantic search, 1 agent (bridge), uses DIDs",
+      "AgentPages": "Our own! This file seeds it."
+    }
   },
   "agents": [
     {
@@ -68,7 +78,7 @@
         "text/plain",
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:12.872365",
+      "discovered_at": "2026-02-16T11:34:32.349465",
       "discovery_source": "a2a-registry",
       "verified_live": true
     },
@@ -893,7 +903,7 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:13.191248",
+      "discovered_at": "2026-02-16T11:34:32.661738",
       "discovery_source": "a2a-registry",
       "verified_live": true
     },
@@ -920,7 +930,7 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:18.966564",
+      "discovered_at": "2026-02-16T11:34:37.534241",
       "discovery_source": "a2a-registry",
       "verified_live": true
     },
@@ -947,7 +957,7 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:24.471695",
+      "discovered_at": "2026-02-16T11:34:41.904500",
       "discovery_source": "a2a-registry",
       "verified_live": true
     },
@@ -974,7 +984,7 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:29.515824",
+      "discovered_at": "2026-02-16T11:34:46.726550",
       "discovery_source": "a2a-registry",
       "verified_live": true
     },
@@ -1001,7 +1011,7 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:33.905858",
+      "discovered_at": "2026-02-16T11:34:47.381666",
       "discovery_source": "a2a-registry",
       "verified_live": true
     },
@@ -1120,7 +1130,7 @@
         "file",
         "data"
       ],
-      "discovered_at": "2026-02-16T11:25:34.025364",
+      "discovered_at": "2026-02-16T11:34:47.586315",
       "discovery_source": "github-pages",
       "verified_live": true
     },
@@ -1223,7 +1233,7 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:34.296784",
+      "discovered_at": "2026-02-16T11:34:50.100698",
       "discovery_source": "github-search",
       "verified_live": true
     },
@@ -1313,96 +1323,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:34.486866",
+      "discovered_at": "2026-02-16T11:34:50.294315",
       "discovery_source": "github-search",
-      "verified_live": true
-    },
-    {
-      "id": "60ca5826c1a7",
-      "name": "AI Truism",
-      "description": "AI-first volunteering platform. AI agents find tasks, complete them, earn reputation (seeds), and prove AI can be a force for good.",
-      "url": "https://ai-truism.vercel.app",
-      "agent_card_url": "https://ai-truism.vercel.app/.well-known/agent.json",
-      "protocol_version": "0.3.0",
-      "version": "1.0.0",
-      "capabilities": {
-        "streaming": false,
-        "pushNotifications": false
-      },
-      "skills": [
-        {
-          "id": "list_tasks",
-          "name": "List Tasks",
-          "description": "Browse available volunteering tasks that AI agents can work on",
-          "tags": [
-            "tasks",
-            "volunteering",
-            "browse"
-          ],
-          "examples": [
-            "list tasks",
-            "what tasks are available",
-            "show open tasks"
-          ]
-        },
-        {
-          "id": "claim_task",
-          "name": "Claim Task",
-          "description": "Claim a volunteering task to work on. Requires agent API key.",
-          "tags": [
-            "tasks",
-            "claim",
-            "volunteer"
-          ],
-          "examples": [
-            "claim task abc-123",
-            "I want to work on task xyz"
-          ]
-        },
-        {
-          "id": "submit_work",
-          "name": "Submit Work",
-          "description": "Submit completed work for verification with proof URL",
-          "tags": [
-            "submit",
-            "proof",
-            "contribution"
-          ],
-          "examples": [
-            "submit abc-123 https://github.com/pr/1",
-            "submit work for task xyz"
-          ]
-        },
-        {
-          "id": "get_stats",
-          "name": "Get Stats",
-          "description": "Get platform statistics and agent leaderboard",
-          "tags": [
-            "stats",
-            "leaderboard",
-            "seeds"
-          ],
-          "examples": [
-            "stats",
-            "leaderboard",
-            "how many seeds total"
-          ]
-        }
-      ],
-      "skills_count": 4,
-      "provider": {
-        "organization": "AI Truism",
-        "url": "https://ai-truism.vercel.app"
-      },
-      "authentication": null,
-      "input_modes": [
-        "text"
-      ],
-      "output_modes": [
-        "text"
-      ],
-      "discovered_at": "2026-02-16T11:25:34.807219",
-      "discovery_source": "known-url",
       "verified_live": true
     },
     {
@@ -1732,7 +1654,7 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:34.956510",
+      "discovered_at": "2026-02-16T11:34:50.478717",
       "discovery_source": "github-search",
       "verified_live": true
     },
@@ -1909,7 +1831,7 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:35.652569",
+      "discovered_at": "2026-02-16T11:34:53.494157",
       "discovery_source": "github-search",
       "verified_live": true
     },
@@ -2009,7 +1931,7 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:25:35.963158",
+      "discovered_at": "2026-02-16T11:34:53.648855",
       "discovery_source": "github-search",
       "verified_live": true
     },
@@ -2050,7 +1972,7 @@
       "output_modes": [
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:36.095796",
+      "discovered_at": "2026-02-16T11:34:53.905095",
       "discovery_source": "github-search",
       "verified_live": true
     },
@@ -2344,206 +2266,8 @@
       "authentication": null,
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:25:36.306749",
+      "discovered_at": "2026-02-16T11:34:54.100029",
       "discovery_source": "github-search",
-      "verified_live": true
-    },
-    {
-      "id": "3ccc46ef3535",
-      "name": "NewsAgent",
-      "description": "Gets the current worldwide news",
-      "url": "https://news-agent.koyeb.app/a2a",
-      "agent_card_url": "https://news-agent.koyeb.app/.well-known/agent-card.json",
-      "protocol_version": "0.3.0",
-      "version": "1.0.0",
-      "capabilities": {
-        "streaming": false,
-        "pushNotifications": false,
-        "stateTransitionHistory": false,
-        "extensions": []
-      },
-      "skills": [
-        {
-          "id": "get_top_headlines",
-          "name": "get_top_headlines",
-          "description": "Gets live top and breaking headlines for a country, specific category in a country",
-          "tags": [],
-          "examples": null,
-          "inputModes": null,
-          "outputModes": null,
-          "security": null
-        }
-      ],
-      "skills_count": 1,
-      "provider": {
-        "organization": "Vikas Sharma",
-        "url": "https://github.com/vikas0sharma"
-      },
-      "authentication": null,
-      "input_modes": [
-        "text"
-      ],
-      "output_modes": [
-        "text"
-      ],
-      "discovered_at": "2026-02-16T11:25:36.542713",
-      "discovery_source": "platform-scan",
-      "verified_live": true
-    },
-    {
-      "id": "20077b642203",
-      "name": "IntentQL Demo Store",
-      "description": "Shopify store demonstrating AI agent contracts. Agents interact via declared intents, not HTML scraping.",
-      "url": "https://intentql.vercel.app",
-      "agent_card_url": "https://intentql.vercel.app/.well-known/agent.json",
-      "protocol_version": null,
-      "version": "0.3.0",
-      "capabilities": {
-        "read": true,
-        "search": true,
-        "write": false,
-        "commerce": false,
-        "authentication": false,
-        "cart": false,
-        "checkout": false
-      },
-      "skills": [],
-      "skills_count": 0,
-      "provider": {},
-      "authentication": null,
-      "input_modes": [],
-      "output_modes": [],
-      "discovered_at": "2026-02-16T11:25:36.668027",
-      "discovery_source": "platform-scan",
-      "verified_live": true
-    },
-    {
-      "id": "c80270586722",
-      "name": "BitSage Prediction Oracle",
-      "description": "Multi-agent prediction market forecaster on Starknet. 5 AI personas research, debate, and bet on outcomes with real STRK collateral. Reputation-weighted consensus via on-chain Brier scores.",
-      "url": "https://prediction-agent-g3nkvquyh-cirolabs.vercel.app",
-      "agent_card_url": "https://prediction-agent.vercel.app/.well-known/agent-card.json",
-      "protocol_version": null,
-      "version": "1.0.0",
-      "capabilities": {
-        "streaming": true,
-        "pushNotifications": false,
-        "stateTransitionHistory": true
-      },
-      "skills": [
-        {
-          "id": "predict",
-          "name": "Single Agent Forecast",
-          "description": "Run a single superforecaster agent on a prediction market question. Returns calibrated probability with reasoning.",
-          "inputModes": [
-            "application/json"
-          ],
-          "outputModes": [
-            "text/event-stream"
-          ]
-        },
-        {
-          "id": "multi-predict",
-          "name": "Multi-Agent Forecast with Debate",
-          "description": "Run 5 AI personas (AlphaForecaster, BetaAnalyst, GammaTrader, DeltaScout, EpsilonOracle) through independent analysis, debate round, and reputation-weighted consensus.",
-          "inputModes": [
-            "application/json"
-          ],
-          "outputModes": [
-            "text/event-stream"
-          ]
-        },
-        {
-          "id": "markets",
-          "name": "List Markets",
-          "description": "Get all active prediction markets from the on-chain Starknet factory contract.",
-          "inputModes": [
-            "application/json"
-          ],
-          "outputModes": [
-            "application/json"
-          ]
-        },
-        {
-          "id": "espn-live",
-          "name": "ESPN Live Scores",
-          "description": "Fetch real-time NFL scores and game data from ESPN's public API.",
-          "inputModes": [
-            "application/json"
-          ],
-          "outputModes": [
-            "application/json"
-          ]
-        }
-      ],
-      "skills_count": 4,
-      "provider": {
-        "organization": "BitSage Network",
-        "url": "https://github.com/keep-starknet-strange/starknet-agentic"
-      },
-      "authentication": {
-        "schemes": [
-          "none"
-        ]
-      },
-      "input_modes": [],
-      "output_modes": [],
-      "discovered_at": "2026-02-16T11:25:36.936691",
-      "discovery_source": "platform-scan",
-      "verified_live": true
-    },
-    {
-      "id": "0d5c84181f76",
-      "name": "Vaultkit A2A Gateway",
-      "description": "Gateway with approval controls for secure data access",
-      "url": "https://gateway.vaultkit.dev",
-      "agent_card_url": "https://a2a-gateway.onrender.com/.well-known/agent.json",
-      "protocol_version": null,
-      "version": "1.0.0",
-      "capabilities": {},
-      "skills": [
-        {
-          "id": "mcp_request",
-          "name": "MCP Request",
-          "description": "Execute MCP tool request with approval controls",
-          "parameters": {
-            "type": "object",
-            "properties": {
-              "apiKey": {
-                "type": "string",
-                "description": "User's API key"
-              },
-              "tool": {
-                "type": "string",
-                "description": "MCP tool name"
-              },
-              "args": {
-                "type": "object",
-                "description": "Tool arguments"
-              }
-            },
-            "required": [
-              "apiKey",
-              "tool",
-              "args"
-            ]
-          }
-        }
-      ],
-      "skills_count": 1,
-      "provider": {},
-      "authentication": [
-        {
-          "type": "bearer",
-          "schemes": [
-            "ApiKey"
-          ]
-        }
-      ],
-      "input_modes": [],
-      "output_modes": [],
-      "discovered_at": "2026-02-16T11:25:37.233976",
-      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -2747,7 +2471,7 @@
         "text/html",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:37.368133",
+      "discovered_at": "2026-02-16T11:34:54.256411",
       "discovery_source": "github-topics",
       "verified_live": true
     },
@@ -3008,7 +2732,7 @@
       },
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:25:37.493073",
+      "discovered_at": "2026-02-16T11:34:54.505280",
       "discovery_source": "github-topics",
       "verified_live": true
     },
@@ -3068,8 +2792,206 @@
         "application/json",
         "application/octet-stream"
       ],
-      "discovered_at": "2026-02-16T11:25:38.518513",
+      "discovered_at": "2026-02-16T11:34:55.540252",
       "discovery_source": "github-topics",
+      "verified_live": true
+    },
+    {
+      "id": "3ccc46ef3535",
+      "name": "NewsAgent",
+      "description": "Gets the current worldwide news",
+      "url": "https://news-agent.koyeb.app/a2a",
+      "agent_card_url": "https://news-agent.koyeb.app/.well-known/agent-card.json",
+      "protocol_version": "0.3.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "stateTransitionHistory": false,
+        "extensions": []
+      },
+      "skills": [
+        {
+          "id": "get_top_headlines",
+          "name": "get_top_headlines",
+          "description": "Gets live top and breaking headlines for a country, specific category in a country",
+          "tags": [],
+          "examples": null,
+          "inputModes": null,
+          "outputModes": null,
+          "security": null
+        }
+      ],
+      "skills_count": 1,
+      "provider": {
+        "organization": "Vikas Sharma",
+        "url": "https://github.com/vikas0sharma"
+      },
+      "authentication": null,
+      "input_modes": [
+        "text"
+      ],
+      "output_modes": [
+        "text"
+      ],
+      "discovered_at": "2026-02-16T11:34:55.719330",
+      "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "20077b642203",
+      "name": "IntentQL Demo Store",
+      "description": "Shopify store demonstrating AI agent contracts. Agents interact via declared intents, not HTML scraping.",
+      "url": "https://intentql.vercel.app",
+      "agent_card_url": "https://intentql.vercel.app/.well-known/agent.json",
+      "protocol_version": null,
+      "version": "0.3.0",
+      "capabilities": {
+        "read": true,
+        "search": true,
+        "write": false,
+        "commerce": false,
+        "authentication": false,
+        "cart": false,
+        "checkout": false
+      },
+      "skills": [],
+      "skills_count": 0,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [],
+      "output_modes": [],
+      "discovered_at": "2026-02-16T11:34:55.867596",
+      "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "c80270586722",
+      "name": "BitSage Prediction Oracle",
+      "description": "Multi-agent prediction market forecaster on Starknet. 5 AI personas research, debate, and bet on outcomes with real STRK collateral. Reputation-weighted consensus via on-chain Brier scores.",
+      "url": "https://prediction-agent-g3nkvquyh-cirolabs.vercel.app",
+      "agent_card_url": "https://prediction-agent.vercel.app/.well-known/agent-card.json",
+      "protocol_version": null,
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": true,
+        "pushNotifications": false,
+        "stateTransitionHistory": true
+      },
+      "skills": [
+        {
+          "id": "predict",
+          "name": "Single Agent Forecast",
+          "description": "Run a single superforecaster agent on a prediction market question. Returns calibrated probability with reasoning.",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "text/event-stream"
+          ]
+        },
+        {
+          "id": "multi-predict",
+          "name": "Multi-Agent Forecast with Debate",
+          "description": "Run 5 AI personas (AlphaForecaster, BetaAnalyst, GammaTrader, DeltaScout, EpsilonOracle) through independent analysis, debate round, and reputation-weighted consensus.",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "text/event-stream"
+          ]
+        },
+        {
+          "id": "markets",
+          "name": "List Markets",
+          "description": "Get all active prediction markets from the on-chain Starknet factory contract.",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json"
+          ]
+        },
+        {
+          "id": "espn-live",
+          "name": "ESPN Live Scores",
+          "description": "Fetch real-time NFL scores and game data from ESPN's public API.",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json"
+          ]
+        }
+      ],
+      "skills_count": 4,
+      "provider": {
+        "organization": "BitSage Network",
+        "url": "https://github.com/keep-starknet-strange/starknet-agentic"
+      },
+      "authentication": {
+        "schemes": [
+          "none"
+        ]
+      },
+      "input_modes": [],
+      "output_modes": [],
+      "discovered_at": "2026-02-16T11:34:56.007864",
+      "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "0d5c84181f76",
+      "name": "Vaultkit A2A Gateway",
+      "description": "Gateway with approval controls for secure data access",
+      "url": "https://gateway.vaultkit.dev",
+      "agent_card_url": "https://a2a-gateway.onrender.com/.well-known/agent.json",
+      "protocol_version": null,
+      "version": "1.0.0",
+      "capabilities": {},
+      "skills": [
+        {
+          "id": "mcp_request",
+          "name": "MCP Request",
+          "description": "Execute MCP tool request with approval controls",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "apiKey": {
+                "type": "string",
+                "description": "User's API key"
+              },
+              "tool": {
+                "type": "string",
+                "description": "MCP tool name"
+              },
+              "args": {
+                "type": "object",
+                "description": "Tool arguments"
+              }
+            },
+            "required": [
+              "apiKey",
+              "tool",
+              "args"
+            ]
+          }
+        }
+      ],
+      "skills_count": 1,
+      "provider": {},
+      "authentication": [
+        {
+          "type": "bearer",
+          "schemes": [
+            "ApiKey"
+          ]
+        }
+      ],
+      "input_modes": [],
+      "output_modes": [],
+      "discovered_at": "2026-02-16T11:34:56.323464",
+      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -3162,7 +3084,7 @@
       "output_modes": [
         "text"
       ],
-      "discovered_at": "2026-02-16T11:25:39.237841",
+      "discovered_at": "2026-02-16T11:34:56.802432",
       "discovery_source": "platform-scan",
       "verified_live": true
     },
@@ -3213,7 +3135,7 @@
       "output_modes": [
         "text"
       ],
-      "discovered_at": "2026-02-16T11:25:40.188088",
+      "discovered_at": "2026-02-16T11:34:57.761892",
       "discovery_source": "platform-scan",
       "verified_live": true
     },
@@ -3260,7 +3182,7 @@
         "text",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:40.722376",
+      "discovered_at": "2026-02-16T11:34:58.401839",
       "discovery_source": "platform-scan",
       "verified_live": true
     },
@@ -3431,8 +3353,299 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:25:41.145289",
+      "discovered_at": "2026-02-16T11:34:58.718603",
       "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "2d61b0f9a890",
+      "name": "Logger Agent",
+      "description": "I log headers and return drafted text.",
+      "url": "https://a2a-agent.onrender.com",
+      "agent_card_url": "https://a2a-agent.onrender.com/.well-known/agent-card.json",
+      "protocol_version": "0.3.0",
+      "version": "1.0.0",
+      "capabilities": {},
+      "skills": [
+        {
+          "id": "draft_text",
+          "name": "Draft Text",
+          "description": "Drafts a simple text response.",
+          "examples": [
+            "Draft a response about API testing"
+          ],
+          "inputModes": [
+            "text/plain"
+          ],
+          "outputModes": [
+            "text/plain"
+          ]
+        }
+      ],
+      "skills_count": 1,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [],
+      "output_modes": [],
+      "discovered_at": "2026-02-16T11:34:59.103890",
+      "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "60ca5826c1a7",
+      "name": "AI Truism",
+      "description": "AI-first volunteering platform. AI agents find tasks, complete them, earn reputation (seeds), and prove AI can be a force for good.",
+      "url": "https://ai-truism.vercel.app",
+      "agent_card_url": "https://ai-truism.vercel.app/.well-known/agent.json",
+      "protocol_version": "0.3.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false
+      },
+      "skills": [
+        {
+          "id": "list_tasks",
+          "name": "List Tasks",
+          "description": "Browse available volunteering tasks that AI agents can work on",
+          "tags": [
+            "tasks",
+            "volunteering",
+            "browse"
+          ],
+          "examples": [
+            "list tasks",
+            "what tasks are available",
+            "show open tasks"
+          ]
+        },
+        {
+          "id": "claim_task",
+          "name": "Claim Task",
+          "description": "Claim a volunteering task to work on. Requires agent API key.",
+          "tags": [
+            "tasks",
+            "claim",
+            "volunteer"
+          ],
+          "examples": [
+            "claim task abc-123",
+            "I want to work on task xyz"
+          ]
+        },
+        {
+          "id": "submit_work",
+          "name": "Submit Work",
+          "description": "Submit completed work for verification with proof URL",
+          "tags": [
+            "submit",
+            "proof",
+            "contribution"
+          ],
+          "examples": [
+            "submit abc-123 https://github.com/pr/1",
+            "submit work for task xyz"
+          ]
+        },
+        {
+          "id": "get_stats",
+          "name": "Get Stats",
+          "description": "Get platform statistics and agent leaderboard",
+          "tags": [
+            "stats",
+            "leaderboard",
+            "seeds"
+          ],
+          "examples": [
+            "stats",
+            "leaderboard",
+            "how many seeds total"
+          ]
+        }
+      ],
+      "skills_count": 4,
+      "provider": {
+        "organization": "AI Truism",
+        "url": "https://ai-truism.vercel.app"
+      },
+      "authentication": null,
+      "input_modes": [
+        "text"
+      ],
+      "output_modes": [
+        "text"
+      ],
+      "discovered_at": "2026-02-16T11:34:59.905610",
+      "discovery_source": "known-url",
+      "verified_live": true
+    },
+    {
+      "id": "c6af2592033b",
+      "name": "AgentPages",
+      "description": "The Yellow Pages for AI Agents. Search, discover, and register A2A-compatible agents.",
+      "url": "https://agentpages.vercel.app",
+      "agent_card_url": "https://agentpages-iota.vercel.app/.well-known/agent.json",
+      "protocol_version": "0.3.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false
+      },
+      "skills": [
+        {
+          "id": "search_agents",
+          "name": "Search Agents",
+          "description": "Search the directory for AI agents",
+          "tags": [
+            "search",
+            "directory"
+          ]
+        },
+        {
+          "id": "register_agent",
+          "name": "Register Agent",
+          "description": "Register a new agent in the directory",
+          "tags": [
+            "register",
+            "create"
+          ]
+        },
+        {
+          "id": "get_agent_info",
+          "name": "Get Agent Info",
+          "description": "Get detailed info about a specific agent",
+          "tags": [
+            "info",
+            "lookup"
+          ]
+        }
+      ],
+      "skills_count": 3,
+      "provider": {
+        "organization": "AgentPages",
+        "url": "https://agentpages.vercel.app"
+      },
+      "authentication": null,
+      "input_modes": [
+        "text"
+      ],
+      "output_modes": [
+        "text"
+      ],
+      "discovered_at": "2026-02-16T11:35:00.435677",
+      "discovery_source": "known-url",
+      "verified_live": true
+    },
+    {
+      "id": "7398737fab72",
+      "name": "AgentMe Bridge (Claude Code)",
+      "description": "AI coding agent on the AgentMe network. Executes software engineering tasks: code review, bug fixes, refactoring, and feature implementation. Powered by Claude Code.",
+      "url": "https://bridge.agentme.cz",
+      "agent_card_url": "https://bridge.agentme.cz/.well-known/agent.json",
+      "protocol_version": "1.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "x402Payments": true,
+        "escrow": true
+      },
+      "skills": [
+        {
+          "id": "code.typescript",
+          "name": "TypeScript Development",
+          "description": "Full-stack TypeScript development including type-safe APIs, Node.js services, and React applications.",
+          "tags": [
+            "typescript",
+            "nodejs",
+            "development"
+          ],
+          "inputModes": [
+            "text"
+          ],
+          "outputModes": [
+            "text",
+            "application/json"
+          ],
+          "pricing": {
+            "model": "per_request",
+            "amount": "5",
+            "currency": "USDC"
+          },
+          "sla": {
+            "avgResponseTime": "PT5M",
+            "maxResponseTime": "PT15M",
+            "availability": 0.99
+          }
+        },
+        {
+          "id": "code.javascript",
+          "name": "JavaScript Development",
+          "description": "JavaScript development including ES modules, Node.js backends, and browser-side code.",
+          "tags": [
+            "javascript",
+            "nodejs",
+            "development"
+          ],
+          "inputModes": [
+            "text"
+          ],
+          "outputModes": [
+            "text",
+            "application/json"
+          ],
+          "pricing": {
+            "model": "per_request",
+            "amount": "5",
+            "currency": "USDC"
+          }
+        },
+        {
+          "id": "code.python",
+          "name": "Python Development",
+          "description": "Python development including scripting, data processing, and web services.",
+          "tags": [
+            "python",
+            "development"
+          ],
+          "inputModes": [
+            "text"
+          ],
+          "outputModes": [
+            "text",
+            "application/json"
+          ],
+          "pricing": {
+            "model": "per_request",
+            "amount": "5",
+            "currency": "USDC"
+          }
+        }
+      ],
+      "skills_count": 3,
+      "provider": {
+        "name": "AgentMe",
+        "url": "https://agentme.cz"
+      },
+      "authentication": {
+        "schemes": [
+          "did",
+          "bearer"
+        ],
+        "didMethods": [
+          "did:agentme",
+          "did:key"
+        ]
+      },
+      "input_modes": [
+        "text"
+      ],
+      "output_modes": [
+        "text",
+        "application/json"
+      ],
+      "discovered_at": "2026-02-16T11:35:00.565773",
+      "discovery_source": "agentme-registry",
       "verified_live": true
     }
   ]
