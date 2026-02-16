@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generated": "2026-02-16T11:35:00.565787",
+    "generated": "2026-02-16T11:43:59.636914",
     "purpose": "All verified live A2A agent cards found on the public internet",
-    "total_urls_scanned": "8000+",
-    "total_live_agents": 29,
+    "total_urls_scanned": "8500+",
+    "total_live_agents": 33,
     "scan_date": "2026-02-16",
     "strategies_used": [
       "a2a-registry (103 entries, 6 live)",
@@ -3646,6 +3646,430 @@
       ],
       "discovered_at": "2026-02-16T11:35:00.565773",
       "discovery_source": "agentme-registry",
+      "verified_live": true
+    },
+    {
+      "id": "98449f148038",
+      "name": "CeloFX",
+      "description": "Autonomous FX arbitrage agent on Celo. Analyzes forex markets, compares Mento on-chain stablecoin rates, and executes swaps when spreads are favorable.",
+      "url": "https://celofx.vercel.app/api/a2a",
+      "agent_card_url": "https://celofx.vercel.app/.well-known/agent-card.json",
+      "protocol_version": "0.3.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "stateTransitionHistory": false
+      },
+      "skills": [
+        {
+          "id": "fx_rate_analysis",
+          "name": "FX Rate Analysis",
+          "description": "Compares live Mento Broker on-chain stablecoin rates with real forex rates (EUR/USD, USD/BRL) to identify arbitrage spreads. Returns spread percentage and whether it exceeds the 0.3% execution threshold.",
+          "tags": [
+            "forex",
+            "arbitrage",
+            "celo",
+            "mento",
+            "stablecoin",
+            "spread"
+          ],
+          "examples": [
+            "What are the current Mento spreads?",
+            "Compare cEUR/cUSD on-chain rate vs EUR/USD forex rate",
+            "Is there an arbitrage opportunity on Mento right now?"
+          ],
+          "inputModes": [
+            "text/plain"
+          ],
+          "outputModes": [
+            "application/json"
+          ]
+        },
+        {
+          "id": "execute_swap",
+          "name": "Execute Mento Swap",
+          "description": "Executes a Mento Broker stablecoin swap on Celo mainnet using CIP-64 fee abstraction (gas paid in cUSD). Requires spread > 0.3% threshold and Bearer auth.",
+          "tags": [
+            "swap",
+            "execution",
+            "mento",
+            "celo",
+            "defi",
+            "fee-abstraction"
+          ],
+          "examples": [
+            "Swap 2 cUSD to cEUR on Mento",
+            "Execute arbitrage on cUSD/cREAL pair"
+          ],
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json"
+          ]
+        },
+        {
+          "id": "portfolio_status",
+          "name": "Portfolio Status",
+          "description": "Returns agent execution wallet balances, recent on-chain trades with Celoscan links, and trade statistics",
+          "tags": [
+            "portfolio",
+            "status",
+            "balance",
+            "trades",
+            "celoscan"
+          ],
+          "examples": [
+            "Show agent portfolio",
+            "What trades were executed today?",
+            "Show recent swaps"
+          ],
+          "inputModes": [
+            "text/plain"
+          ],
+          "outputModes": [
+            "application/json"
+          ]
+        },
+        {
+          "id": "performance_tracking",
+          "name": "Performance Tracking",
+          "description": "Returns the agent's verified track record: total volume, cumulative P&L, success rate, pairs traded. All trades have on-chain proof verifiable on Celoscan.",
+          "tags": [
+            "performance",
+            "pnl",
+            "track-record",
+            "verification",
+            "celoscan"
+          ],
+          "examples": [
+            "What is the agent's track record?",
+            "Show cumulative P&L",
+            "How many trades has the agent executed?"
+          ],
+          "inputModes": [
+            "text/plain"
+          ],
+          "outputModes": [
+            "application/json"
+          ]
+        }
+      ],
+      "skills_count": 4,
+      "provider": {
+        "organization": "CeloFX",
+        "url": "https://celofx.vercel.app"
+      },
+      "authentication": {
+        "schemes": [
+          "none"
+        ],
+        "credentials": null
+      },
+      "input_modes": [
+        "text/plain",
+        "application/json"
+      ],
+      "output_modes": [
+        "text/plain",
+        "application/json"
+      ],
+      "discovered_at": "2026-02-16T11:43:58.535428",
+      "discovery_source": "x402-ecosystem",
+      "verified_live": true
+    },
+    {
+      "id": "6d05d046f911",
+      "name": "cross-dex-arbitrage-alert",
+      "description": "Detect cross-DEX token price spreads across Ethereum and Base",
+      "url": "https://crossdex-arbitrage-alert.vercel.app/",
+      "agent_card_url": "https://crossdex-arbitrage-alert.vercel.app/.well-known/agent.json",
+      "protocol_version": null,
+      "version": "0.1.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "stateTransitionHistory": true,
+        "extensions": [
+          {
+            "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1",
+            "description": "Agent Payments Protocol (AP2)",
+            "required": true,
+            "params": {
+              "roles": [
+                "merchant"
+              ]
+            }
+          }
+        ]
+      },
+      "skills": [
+        {
+          "id": "scan",
+          "name": "scan",
+          "description": "Scan multiple DEXs for profitable arbitrage routes",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "token_in": {
+                "type": "string",
+                "pattern": "^0x[a-fA-F0-9]{40}$"
+              },
+              "token_out": {
+                "type": "string",
+                "pattern": "^0x[a-fA-F0-9]{40}$"
+              },
+              "amount_in": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "chains": {
+                "default": [
+                  "ethereum",
+                  "base",
+                  "bsc"
+                ],
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "token_in",
+              "token_out",
+              "amount_in",
+              "chains"
+            ],
+            "additionalProperties": false
+          },
+          "x_output_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "best_route": {
+                "type": "string"
+              },
+              "alt_routes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "net_spread_bps": {
+                "type": "number"
+              },
+              "est_fill_cost": {
+                "type": "number"
+              },
+              "timestamp": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "best_route",
+              "alt_routes",
+              "net_spread_bps",
+              "est_fill_cost",
+              "timestamp"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "status",
+          "name": "status",
+          "description": "Check agent health and supported chains/DEXs",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "x_output_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "supported_chains": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "supported_dexs": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "supported_tokens": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "required": [
+              "status",
+              "supported_chains",
+              "supported_dexs",
+              "supported_tokens"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "skills_count": 2,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [
+        "application/json"
+      ],
+      "output_modes": [
+        "application/json",
+        "text/plain"
+      ],
+      "discovered_at": "2026-02-16T11:43:58.909855",
+      "discovery_source": "x402-ecosystem",
+      "verified_live": true
+    },
+    {
+      "id": "e45245363301",
+      "name": "skillscan",
+      "description": "x402-powered security scanner for skill repositories",
+      "url": "https://skillscan.port402.com/",
+      "agent_card_url": "https://skillscan.port402.com/.well-known/agent.json",
+      "protocol_version": "1.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "stateTransitionHistory": true
+      },
+      "skills": [
+        {
+          "id": "health",
+          "name": "health",
+          "description": "Returns agent status, version, and payment configuration",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "scan",
+          "name": "scan",
+          "description": "Security scan for ClawHub skills ($0.05). Analyzes skill source code for malware, credential theft, prompt injection, and suspicious patterns before installation. Returns risk score and detailed findings. Example: { skill: 'claw-club' }",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "skill": {
+                "type": "string",
+                "description": "ClawHub skill to scan. Examples: 'claw-club', 'openclaw/claw-club'. Validates before charging - invalid skills return 400 (no payment)."
+              },
+              "version": {
+                "description": "Specific version to scan. Defaults to latest if not specified.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "skill"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "skills_count": 2,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [
+        "application/json"
+      ],
+      "output_modes": [
+        "application/json",
+        "text/plain"
+      ],
+      "discovered_at": "2026-02-16T11:43:59.524380",
+      "discovery_source": "x402-ecosystem",
+      "verified_live": true
+    },
+    {
+      "id": "ce10b8a4dc8f",
+      "name": "Reldo",
+      "description": "AI Ethereum data analyst. Specialized in validator performance, MEV analysis, block propagation, and network metrics. Publishes on-chain verified research via AnalysisRegistry. Built by @ReldoTheScribe.",
+      "url": "https://reldothescribe.github.io",
+      "agent_card_url": "https://reldothescribe.github.io/.well-known/agent-card.json",
+      "protocol_version": null,
+      "version": null,
+      "capabilities": [
+        "ethereum-analysis",
+        "validator-performance",
+        "mev-analysis",
+        "block-propagation",
+        "network-metrics",
+        "on-chain-research-provenance"
+      ],
+      "skills": [],
+      "skills_count": 0,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [],
+      "output_modes": [],
+      "discovered_at": "2026-02-16T11:43:59.636893",
+      "discovery_source": "x402-ecosystem",
       "verified_live": true
     }
   ]
