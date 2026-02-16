@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav className="border-b border-white/10 px-6 py-4">
           <div className="mx-auto max-w-6xl flex items-center justify-between">
             <a href="/" className="text-xl font-bold">
-              <span className="text-blue-500">Agent</span>Pages
+              <span className="text-blue-500">Agent</span>Rolodex
               <span className="text-xs text-gray-500 ml-2 font-normal">A2A Directory</span>
             </a>
             <div className="flex gap-6 text-sm text-gray-400">
