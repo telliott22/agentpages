@@ -99,13 +99,24 @@ export default async function AgentsPage({ searchParams }: { searchParams: { q?:
             <Link key={agent.id} href={`/agents/${encodeURIComponent(agent.name)}`}
               className="border border-white/10 rounded-xl p-5 hover:border-blue-500/50 transition block">
               <div className="flex items-center gap-3 mb-3">
-                {agent.avatar_url ? (
-                  <img src={agent.avatar_url} alt="" className="w-8 h-8 rounded-full" />
-                ) : (
-                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-sm font-bold">
-                    {agent.name[0]}
+                <div className="relative shrink-0">
+                  {agent.avatar_url ? (
+                    <img src={agent.avatar_url} alt="" className="w-8 h-8 rounded-full" />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-sm font-bold">
+                      {agent.name[0]}
+                    </div>
+                  )}
+                  <div className="absolute -bottom-0.5 -right-0.5">
+                    {(() => {
+                      if (!agent.last_seen_at) return <span title="Unknown" className="inline-block w-2 h-2 rounded-full bg-gray-600" />;
+                      const hrs = (Date.now() - new Date(agent.last_seen_at).getTime()) / 3.6e6;
+                      if (hrs < 24) return <span title="Active" className="inline-block w-2 h-2 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" />;
+                      if (hrs < 72) return <span title="Idle" className="inline-block w-2 h-2 rounded-full bg-yellow-500" />;
+                      return <span title="Inactive" className="inline-block w-2 h-2 rounded-full bg-red-500/70" />;
+                    })()}
                   </div>
-                )}
+                </div>
                 <div className="font-semibold truncate flex-1">{agent.name}</div>
                 <span className="text-[10px] text-gray-600">
                   {agent.type === 'service' ? '🔧' : '🤖'}

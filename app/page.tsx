@@ -4,18 +4,31 @@ import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
+function StatusDot({ lastSeen }: { lastSeen?: string }) {
+  if (!lastSeen) return <span title="Unknown status" className="inline-block w-2 h-2 rounded-full bg-gray-600" />;
+  const hoursSince = (Date.now() - new Date(lastSeen).getTime()) / (1000 * 60 * 60);
+  if (hoursSince < 24) return <span title="Active — seen in last 24h" className="inline-block w-2 h-2 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" />;
+  if (hoursSince < 72) return <span title="Idle — last seen over 24h ago" className="inline-block w-2 h-2 rounded-full bg-yellow-500" />;
+  return <span title="Inactive — last seen over 72h ago" className="inline-block w-2 h-2 rounded-full bg-red-500/70" />;
+}
+
 function AgentRow({ agent }: { agent: AgentCard }) {
   return (
     <Link href={`/agents/${encodeURIComponent(agent.name)}`}
       className="border border-white/10 rounded-xl p-5 hover:border-blue-500/50 transition block">
       <div className="flex items-center gap-4">
-        {agent.avatar_url ? (
-          <img src={agent.avatar_url} alt="" className="w-10 h-10 rounded-full" />
-        ) : (
-          <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-sm font-bold">
-            {agent.name[0]}
+        <div className="relative">
+          {agent.avatar_url ? (
+            <img src={agent.avatar_url} alt="" className="w-10 h-10 rounded-full" />
+          ) : (
+            <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-sm font-bold">
+              {agent.name[0]}
+            </div>
+          )}
+          <div className="absolute -bottom-0.5 -right-0.5">
+            <StatusDot lastSeen={agent.last_seen_at} />
           </div>
-        )}
+        </div>
         <div className="flex-1 min-w-0">
           <div className="font-semibold flex items-center gap-2 flex-wrap">
             {agent.name}

@@ -14,13 +14,24 @@ export default async function AgentProfile({ params }: { params: { name: string 
     <div className="max-w-3xl">
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
-        {agent.avatar_url ? (
-          <img src={agent.avatar_url} alt="" className="w-16 h-16 rounded-full" />
-        ) : (
-          <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-2xl font-bold">
-            {agent.name[0]}
+        <div className="relative shrink-0">
+          {agent.avatar_url ? (
+            <img src={agent.avatar_url} alt="" className="w-16 h-16 rounded-full" />
+          ) : (
+            <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-2xl font-bold">
+              {agent.name[0]}
+            </div>
+          )}
+          <div className="absolute bottom-0 right-0">
+            {(() => {
+              if (!agent.last_seen_at) return <span title="Unknown status" className="inline-block w-3 h-3 rounded-full bg-gray-600 border-2 border-gray-900" />;
+              const hrs = (Date.now() - new Date(agent.last_seen_at).getTime()) / 3.6e6;
+              if (hrs < 24) return <span title="Active — seen in last 24h" className="inline-block w-3 h-3 rounded-full bg-green-500 border-2 border-gray-900 shadow-[0_0_6px_rgba(34,197,94,0.5)]" />;
+              if (hrs < 72) return <span title="Idle — last seen over 24h ago" className="inline-block w-3 h-3 rounded-full bg-yellow-500 border-2 border-gray-900" />;
+              return <span title="Inactive — last seen over 72h ago" className="inline-block w-3 h-3 rounded-full bg-red-500/70 border-2 border-gray-900" />;
+            })()}
           </div>
-        )}
+        </div>
         <div>
           <h1 className="text-3xl font-bold flex items-center gap-2">
             {agent.name}
