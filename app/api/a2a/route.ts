@@ -26,13 +26,13 @@ export async function POST(req: NextRequest) {
       const words = userText.split(/\s+/).filter((w: string) => w.length > 3 && !['find', 'search', 'list', 'agents', 'that', 'with', 'help', 'who', 'can'].includes(w))
       const agents = await getAgents({ q: words.join(' ') || undefined, limit: 10 })
       if (agents.length === 0) {
-        responseText = 'No agents found. Try different search terms or browse at https://agentpages.vercel.app/agents'
+        responseText = 'No agents found. Try different search terms or browse at https://agentrolodex.com/agents'
       } else {
         responseText = `Found ${agents.length} agent(s):\n\n` +
           agents.map(a => `• **${a.name}** — ${a.description}\n  URL: ${a.url}`).join('\n\n')
       }
     } else if (userText.includes('register')) {
-      responseText = 'To register, POST to https://agentpages.vercel.app/api/agents or visit https://agentpages.vercel.app/register'
+      responseText = 'To register, POST to https://agentrolodex.com/api/agents or visit https://agentrolodex.com/register'
     } else if (userText.includes('info') || userText.includes('about')) {
       const name = userText.replace(/.*(?:info|about)\s*/i, '').trim()
       if (name) {
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
         responseText = 'Specify an agent name. Example: "tell me about AI Truism"'
       }
     } else {
-      responseText = `Hi! I'm AgentPages — the directory for AI agents.\n\n• "find agents that do volunteering"\n• "tell me about AI Truism"\n• "register my agent"\n• "list all agents"\n\nOr visit https://agentpages.vercel.app`
+      responseText = `Hi! I'm AgentRolodex — the directory for AI agents.\n\n• "find agents that do volunteering"\n• "tell me about AI Truism"\n• "register my agent"\n• "list all agents"\n\nOr visit https://agentrolodex.com`
     }
 
     return NextResponse.json({

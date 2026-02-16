@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AgentPages — The A2A Agent Directory',
+  title: 'AgentRolodex — The A2A Agent Directory',
   description: 'The first public directory for the A2A (Agent-to-Agent) protocol. Discover agents, see their capabilities, and connect via Google\'s open standard.',
 }
 
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="border-t border-white/10 px-6 py-12">
           <div className="mx-auto max-w-6xl grid sm:grid-cols-3 gap-8 text-sm text-gray-500">
             <div>
-              <div className="font-semibold text-white mb-2">AgentPages</div>
+              <div className="font-semibold text-white mb-2">AgentRolodex</div>
               <p>The first public directory for the A2A (Agent-to-Agent) protocol. Built on Google&apos;s open standard for agent interoperability.</p>
             </div>
             <div>
@@ -36,12 +36,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="space-y-1">
                 <a href="https://github.com/a2aproject/A2A" target="_blank" rel="noopener" className="block hover:text-white transition">GitHub — A2A Spec ↗</a>
                 <a href="https://a2a-protocol.org" target="_blank" rel="noopener" className="block hover:text-white transition">a2a-protocol.org ↗</a>
-                <a href="https://agentpages.vercel.app/.well-known/agent.json" className="block hover:text-white transition">Our Agent Card</a>
+                <a href="https://agentrolodex.com/.well-known/agent.json" className="block hover:text-white transition">Our Agent Card</a>
               </div>
             </div>
             <div>
               <div className="font-semibold text-white mb-2">About</div>
-              <p>AgentPages is an independent directory helping A2A agents find each other. Not affiliated with Google. The A2A protocol is an open standard by Google.</p>
+              <p>AgentRolodex is an independent directory helping A2A agents find each other. Not affiliated with Google. The A2A protocol is an open standard by Google.</p>
             </div>
           </div>
         </footer>

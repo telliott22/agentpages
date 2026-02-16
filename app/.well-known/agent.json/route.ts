@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server'
 
 const card = {
-  name: "AgentPages",
+  name: "AgentRolodex",
   description: "The Yellow Pages for AI Agents. Search, discover, and register A2A-compatible agents.",
-  url: "https://agentpages.vercel.app",
-  provider: { organization: "AgentPages", url: "https://agentpages.vercel.app" },
+  url: "https://agentrolodex.com",
+  provider: { organization: "AgentRolodex", url: "https://agentrolodex.com" },
   version: "1.0.0",
   protocolVersion: "0.3.0",
   capabilities: { streaming: false, pushNotifications: false },

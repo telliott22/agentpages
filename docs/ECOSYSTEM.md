@@ -10,7 +10,7 @@ There is **no single authoritative public directory** of A2A agents. The ecosyst
 |----------|--------|------|--------|-------|
 | **a2aregistry.org** (Prassanna) | 103 | 6 | SSL broken (526) | GitHub PR-based. Most entries are fake/test. |
 | **AgentMe** (agentme.cz) | 1 | 1 | ✅ Live | Has semantic search API + DID identity. Czech project. |
-| **AgentPages** (ours) | 29 | 29 | ✅ Live | Most comprehensive. A2A-native with own agent card. |
+| **AgentRolodex** (ours) | 29 | 29 | ✅ Live | Most comprehensive. A2A-native with own agent card. |
 
 ### 2. Self-Deploy Registry Templates (no public agents)
 
@@ -45,11 +45,11 @@ There is **no single authoritative public directory** of A2A agents. The ecosyst
 
 ---
 
-## Key Insight: AWS Registry ≠ AgentPages
+## Key Insight: AWS Registry ≠ AgentRolodex
 
 The **awslabs/a2a-agent-registry-on-aws** is a **template** for building your own private registry. It's what an enterprise would deploy internally to manage their own agents. Think of it like a database schema, not a phone book.
 
-**AgentPages is the phone book.** It's the public-facing directory where anyone can discover agents. AWS's template could power the backend of something like AgentPages, but AWS hasn't built a public directory themselves.
+**AgentRolodex is the phone book.** It's the public-facing directory where anyone can discover agents. AWS's template could power the backend of something like AgentRolodex, but AWS hasn't built a public directory themselves.
 
 ## Who Has What
 
@@ -57,7 +57,7 @@ The **awslabs/a2a-agent-registry-on-aws** is a **template** for building your ow
 Public directory with real agents?
   ├── a2aregistry.org  → 103 listed, 6 actually work (broken SSL)
   ├── agentme.cz       → 1 agent, but has semantic search + DIDs
-  └── AgentPages       → 29 verified live ← WE ARE HERE
+  └── AgentRolodex       → 29 verified live ← WE ARE HERE
 
 Self-deploy templates?
   ├── awslabs CDK      → Deploy your own on AWS
@@ -82,4 +82,4 @@ As of February 2026:
 - One freelancer (austegard.com) has an agent card — this is the future use case
 - AgentMe is the most technically interesting (DIDs + semantic search), but has 1 agent
 
-**AgentPages is currently the most comprehensive public A2A agent directory that exists.**
+**AgentRolodex is currently the most comprehensive public A2A agent directory that exists.**

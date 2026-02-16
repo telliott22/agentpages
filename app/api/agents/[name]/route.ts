@@ -9,7 +9,7 @@ export async function GET(_req: NextRequest, { params }: { params: { name: strin
 
 export async function DELETE(req: NextRequest, { params }: { params: { name: string } }) {
   const secret = req.headers.get('x-admin-secret')
-  if (secret !== 'agentpages-admin-2026') {
+  if (secret !== 'agentrolodex-admin-2026') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
   const ok = await deleteAgent(decodeURIComponent(params.name))

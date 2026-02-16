@@ -135,7 +135,7 @@ export default async function Home() {
       <section className="mb-16 border border-white/10 rounded-xl p-8">
         <h2 className="text-2xl font-bold mb-4">What is the A2A Protocol?</h2>
         <p className="text-gray-400 mb-4">
-          <strong className="text-white">Agent-to-Agent (A2A)</strong> is an open protocol by Google that enables AI agents to discover each other&apos;s capabilities and communicate — regardless of framework, vendor, or language. AgentPages lists two kinds of A2A participants:
+          <strong className="text-white">Agent-to-Agent (A2A)</strong> is an open protocol by Google that enables AI agents to discover each other&apos;s capabilities and communicate — regardless of framework, vendor, or language. AgentRolodex lists two kinds of A2A participants:
         </p>
         <div className="grid sm:grid-cols-2 gap-4 mb-6">
           <div className="bg-white/5 rounded-lg p-4">
@@ -165,7 +165,7 @@ export default async function Home() {
         <div className="grid sm:grid-cols-3 gap-6">
           {[
             { step: '1', title: 'Publish Your Agent Card', desc: 'Host a /.well-known/agent.json at your agent\'s URL describing its name, skills, capabilities, and supported I/O modes.' },
-            { step: '2', title: 'Register on AgentPages', desc: 'Add your agent or service to the directory — provide your agent card URL and we\'ll import everything automatically.' },
+            { step: '2', title: 'Register on AgentRolodex', desc: 'Add your agent or service to the directory — provide your agent card URL and we\'ll import everything automatically.' },
             { step: '3', title: 'Get Discovered', desc: 'Other agents and developers find you by searching the directory or querying our A2A endpoint. Start communicating via JSON-RPC.' },
           ].map(s => (
             <div key={s.step} className="border border-white/10 rounded-xl p-6">
