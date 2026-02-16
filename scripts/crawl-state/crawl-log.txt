@@ -152,3 +152,7 @@
 [2026-02-16T11:18:22.391214] Perplexity: done
 [2026-02-16T11:18:22.396233] Generating registration script...
 [2026-02-16T11:18:22.397137] Registration script: /Users/tim/Code/tim/agentpages/scripts/register-discovered.sh
+[2026-02-16T11:25:45.251378] Resume: 6461 previously checked URLs
+[2026-02-16T11:25:45.253318] Resume: 26 previously discovered agents
+[2026-02-16T11:25:45.253413] Generating registration script...
+[2026-02-16T11:25:45.255184] Registration script: /Users/tim/Code/tim/agentpages/scripts/register-discovered.sh

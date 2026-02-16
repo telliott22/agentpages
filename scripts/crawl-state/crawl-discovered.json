@@ -1,10 +1,19 @@
 {
   "metadata": {
-    "generated": "2026-02-16T11:22:21.538544",
+    "generated": "2026-02-16T11:25:41.145326",
     "purpose": "All verified live A2A agent cards found on the public internet",
-    "total_urls_scanned": 6500,
+    "total_urls_scanned": "7000+",
     "total_live_agents": 26,
-    "scan_date": "2026-02-16"
+    "scan_date": "2026-02-16",
+    "strategies": [
+      "a2a-registry (103 entries checked)",
+      "GitHub code search (150+ repos)",
+      "GitHub topic search (300+ repos)",
+      "Certificate Transparency logs",
+      "Hosting platform brute-force (21 platforms \u00d7 100+ names)",
+      "Domain scanning (100+ AI/tech companies)",
+      "Perplexity web search"
+    ]
   },
   "agents": [
     {
@@ -59,7 +68,8 @@
         "text/plain",
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:21:48.028579",
+      "discovered_at": "2026-02-16T11:25:12.872365",
+      "discovery_source": "a2a-registry",
       "verified_live": true
     },
     {
@@ -883,7 +893,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:21:48.403996",
+      "discovered_at": "2026-02-16T11:25:13.191248",
+      "discovery_source": "a2a-registry",
       "verified_live": true
     },
     {
@@ -909,7 +920,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:21:53.154995",
+      "discovered_at": "2026-02-16T11:25:18.966564",
+      "discovery_source": "a2a-registry",
       "verified_live": true
     },
     {
@@ -935,7 +947,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:21:58.909696",
+      "discovered_at": "2026-02-16T11:25:24.471695",
+      "discovery_source": "a2a-registry",
       "verified_live": true
     },
     {
@@ -961,7 +974,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:22:03.145542",
+      "discovered_at": "2026-02-16T11:25:29.515824",
+      "discovery_source": "a2a-registry",
       "verified_live": true
     },
     {
@@ -987,7 +1001,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:22:08.689748",
+      "discovered_at": "2026-02-16T11:25:33.905858",
+      "discovery_source": "a2a-registry",
       "verified_live": true
     },
     {
@@ -1105,7 +1120,8 @@
         "file",
         "data"
       ],
-      "discovered_at": "2026-02-16T11:22:09.002863",
+      "discovered_at": "2026-02-16T11:25:34.025364",
+      "discovery_source": "github-pages",
       "verified_live": true
     },
     {
@@ -1207,7 +1223,8 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:22:11.598769",
+      "discovered_at": "2026-02-16T11:25:34.296784",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -1296,63 +1313,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:22:11.764317",
-      "verified_live": true
-    },
-    {
-      "id": "c6af2592033b",
-      "name": "AgentPages",
-      "description": "The Yellow Pages for AI Agents. Search, discover, and register A2A-compatible agents.",
-      "url": "https://agentpages.vercel.app",
-      "agent_card_url": "https://agentpages-iota.vercel.app/.well-known/agent.json",
-      "protocol_version": "0.3.0",
-      "version": "1.0.0",
-      "capabilities": {
-        "streaming": false,
-        "pushNotifications": false
-      },
-      "skills": [
-        {
-          "id": "search_agents",
-          "name": "Search Agents",
-          "description": "Search the directory for AI agents",
-          "tags": [
-            "search",
-            "directory"
-          ]
-        },
-        {
-          "id": "register_agent",
-          "name": "Register Agent",
-          "description": "Register a new agent in the directory",
-          "tags": [
-            "register",
-            "create"
-          ]
-        },
-        {
-          "id": "get_agent_info",
-          "name": "Get Agent Info",
-          "description": "Get detailed info about a specific agent",
-          "tags": [
-            "info",
-            "lookup"
-          ]
-        }
-      ],
-      "skills_count": 3,
-      "provider": {
-        "organization": "AgentPages",
-        "url": "https://agentpages.vercel.app"
-      },
-      "authentication": null,
-      "input_modes": [
-        "text"
-      ],
-      "output_modes": [
-        "text"
-      ],
-      "discovered_at": "2026-02-16T11:22:12.140254",
+      "discovered_at": "2026-02-16T11:25:34.486866",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -1439,7 +1401,8 @@
       "output_modes": [
         "text"
       ],
-      "discovered_at": "2026-02-16T11:22:12.959888",
+      "discovered_at": "2026-02-16T11:25:34.807219",
+      "discovery_source": "known-url",
       "verified_live": true
     },
     {
@@ -1769,7 +1732,8 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:22:13.565395",
+      "discovered_at": "2026-02-16T11:25:34.956510",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -1945,7 +1909,8 @@
         "application/json",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:22:16.582516",
+      "discovered_at": "2026-02-16T11:25:35.652569",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -2044,7 +2009,8 @@
       "output_modes": [
         "application/json"
       ],
-      "discovered_at": "2026-02-16T11:22:16.887944",
+      "discovered_at": "2026-02-16T11:25:35.963158",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -2084,7 +2050,8 @@
       "output_modes": [
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:22:17.136702",
+      "discovered_at": "2026-02-16T11:25:36.095796",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -2377,7 +2344,8 @@
       "authentication": null,
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:22:17.409864",
+      "discovered_at": "2026-02-16T11:25:36.306749",
+      "discovery_source": "github-search",
       "verified_live": true
     },
     {
@@ -2418,7 +2386,8 @@
       "output_modes": [
         "text"
       ],
-      "discovered_at": "2026-02-16T11:22:17.595761",
+      "discovered_at": "2026-02-16T11:25:36.542713",
+      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -2444,7 +2413,8 @@
       "authentication": null,
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:22:17.724065",
+      "discovered_at": "2026-02-16T11:25:36.668027",
+      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -2518,7 +2488,8 @@
       },
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:22:18.063425",
+      "discovered_at": "2026-02-16T11:25:36.936691",
+      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -2571,7 +2542,8 @@
       ],
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:22:18.357646",
+      "discovered_at": "2026-02-16T11:25:37.233976",
+      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -2775,7 +2747,8 @@
         "text/html",
         "text/plain"
       ],
-      "discovered_at": "2026-02-16T11:22:18.499068",
+      "discovered_at": "2026-02-16T11:25:37.368133",
+      "discovery_source": "github-topics",
       "verified_live": true
     },
     {
@@ -3035,7 +3008,8 @@
       },
       "input_modes": [],
       "output_modes": [],
-      "discovered_at": "2026-02-16T11:22:18.624404",
+      "discovered_at": "2026-02-16T11:25:37.493073",
+      "discovery_source": "github-topics",
       "verified_live": true
     },
     {
@@ -3094,7 +3068,8 @@
         "application/json",
         "application/octet-stream"
       ],
-      "discovered_at": "2026-02-16T11:22:19.630265",
+      "discovered_at": "2026-02-16T11:25:38.518513",
+      "discovery_source": "github-topics",
       "verified_live": true
     },
     {
@@ -3187,60 +3162,8 @@
       "output_modes": [
         "text"
       ],
-      "discovered_at": "2026-02-16T11:22:20.228058",
-      "verified_live": true
-    },
-    {
-      "id": "0d5c84181f76",
-      "name": "Vaultkit A2A Gateway",
-      "description": "Gateway with approval controls for secure data access",
-      "url": "https://gateway.vaultkit.dev",
-      "agent_card_url": "https://gateway.vaultkit.dev/.well-known/agent.json",
-      "protocol_version": null,
-      "version": "1.0.0",
-      "capabilities": {},
-      "skills": [
-        {
-          "id": "mcp_request",
-          "name": "MCP Request",
-          "description": "Execute MCP tool request with approval controls",
-          "parameters": {
-            "type": "object",
-            "properties": {
-              "apiKey": {
-                "type": "string",
-                "description": "User's API key"
-              },
-              "tool": {
-                "type": "string",
-                "description": "MCP tool name"
-              },
-              "args": {
-                "type": "object",
-                "description": "Tool arguments"
-              }
-            },
-            "required": [
-              "apiKey",
-              "tool",
-              "args"
-            ]
-          }
-        }
-      ],
-      "skills_count": 1,
-      "provider": {},
-      "authentication": [
-        {
-          "type": "bearer",
-          "schemes": [
-            "ApiKey"
-          ]
-        }
-      ],
-      "input_modes": [],
-      "output_modes": [],
-      "discovered_at": "2026-02-16T11:22:20.945911",
+      "discovered_at": "2026-02-16T11:25:39.237841",
+      "discovery_source": "platform-scan",
       "verified_live": true
     },
     {
@@ -3290,7 +3213,226 @@
       "output_modes": [
         "text"
       ],
-      "discovered_at": "2026-02-16T11:22:21.538527",
+      "discovered_at": "2026-02-16T11:25:40.188088",
+      "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "6663eb0d3343",
+      "name": "Comedian Agent",
+      "description": "A humorous stand-up comedian agent that brings laughter and wit to every conversation. Powered by Google Gemini, this agent responds in your language with clever jokes and funny observations.",
+      "url": "https://a2a-demo-production.up.railway.app/",
+      "agent_card_url": "https://a2a-demo-production.up.railway.app/.well-known/agent.json",
+      "protocol_version": "0.3.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "pushNotifications": true,
+        "streaming": true
+      },
+      "skills": [
+        {
+          "description": "A hilarious stand-up comedian that tells jokes, shares funny observations, and engages in witty banter. Responds in the same language as the user.",
+          "examples": [
+            "tell me a joke",
+            "make me laugh",
+            "say something funny",
+            "what's your take on Monday mornings?"
+          ],
+          "id": "comedy_chat",
+          "name": "Humorous Stand-up Comedy Chat",
+          "tags": [
+            "comedy",
+            "humor",
+            "jokes",
+            "entertainment",
+            "stand-up"
+          ]
+        }
+      ],
+      "skills_count": 1,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [
+        "text",
+        "text/plain"
+      ],
+      "output_modes": [
+        "text",
+        "text/plain"
+      ],
+      "discovered_at": "2026-02-16T11:25:40.722376",
+      "discovery_source": "platform-scan",
+      "verified_live": true
+    },
+    {
+      "id": "ea74264e26a4",
+      "name": "defi-agent",
+      "description": "DeFi analytics from DeFiLlama. TVL, chains, DEX volumes, and protocol data.",
+      "url": "https://defi-agent-production.up.railway.app/",
+      "agent_card_url": "https://defi-agent-production.up.railway.app/.well-known/agent.json",
+      "protocol_version": "1.0",
+      "version": "1.0.0",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "stateTransitionHistory": true
+      },
+      "skills": [
+        {
+          "id": "overview",
+          "name": "overview",
+          "description": "Free overview of DeFi ecosystem - top chains by TVL",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "chains",
+          "name": "chains",
+          "description": "All blockchain chains ranked by Total Value Locked",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "limit": {
+                "default": 25,
+                "type": "number",
+                "minimum": 1,
+                "maximum": 100
+              }
+            },
+            "required": [
+              "limit"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "dexes",
+          "name": "dexes",
+          "description": "DEX volume overview across all chains",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "protocols",
+          "name": "protocols",
+          "description": "Top DeFi protocols ranked by Total Value Locked",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "limit": {
+                "default": 20,
+                "type": "number",
+                "minimum": 1,
+                "maximum": 50
+              }
+            },
+            "required": [
+              "limit"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "chain",
+          "name": "chain",
+          "description": "Detailed TVL and protocol breakdown for a specific blockchain",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "chain": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "chain"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "id": "report",
+          "name": "report",
+          "description": "Comprehensive DeFi market report with chains, protocols, and DEX data",
+          "inputModes": [
+            "application/json"
+          ],
+          "outputModes": [
+            "application/json",
+            "text/plain"
+          ],
+          "streaming": false,
+          "x_input_schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          }
+        }
+      ],
+      "skills_count": 6,
+      "provider": {},
+      "authentication": null,
+      "input_modes": [
+        "application/json"
+      ],
+      "output_modes": [
+        "application/json",
+        "text/plain"
+      ],
+      "discovered_at": "2026-02-16T11:25:41.145289",
+      "discovery_source": "platform-scan",
       "verified_live": true
     }
   ]
