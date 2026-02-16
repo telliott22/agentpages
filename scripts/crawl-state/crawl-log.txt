@@ -1,0 +1,154 @@
+[2026-02-16T11:03:01.094732] Resume: 2053 previously checked URLs
+[2026-02-16T11:03:01.094835] ━━━ STRATEGY: Known URLs ━━━
+[2026-02-16T11:03:01.222243] 🟢 FOUND: Hello World Agent (1 skills) → https://hello.a2aregistry.org/.well-known/agent-card.json
+[2026-02-16T11:03:01.531196] 🟢 FOUND: Coin Railz (46 skills) → https://coinrailz.com/.well-known/agent-card.json
+[2026-02-16T11:03:17.281594] 🟢 FOUND: Austegard AI Consultant (5 skills) → https://austegard.com/.well-known/agent.json
+[2026-02-16T11:03:19.867803] 🟢 FOUND: slippage-sentinel (1 skills) → https://slippage-sentinel.vercel.app/.well-known/agent-card.json
+[2026-02-16T11:03:20.277903] 🟢 FOUND: Earnbase Human Feedback Agent (4 skills) → https://earnbase.vercel.app/.well-known/agent-card.json
+[2026-02-16T11:03:22.578368] 🟢 FOUND: AI Truism (4 skills) → https://ai-truism.vercel.app/.well-known/agent.json
+[2026-02-16T11:03:23.547440] Known: checked 17 URLs
+[2026-02-16T11:03:23.548788] ━━━ STRATEGY: A2A Registry ━━━
+[2026-02-16T11:03:24.056854] Registry fetch failed: HTTP Error 404: Not Found
+[2026-02-16T11:03:24.059392] ━━━ STRATEGY: GitHub Code Search ━━━
+[2026-02-16T11:03:24.130727] GitHub: searching 'protocolVersion+defaultInputModes+filename:agent.json'
+[2026-02-16T11:03:25.230557]   → 105 results, processing 100
+[2026-02-16T11:03:27.237417] GitHub: searching 'protocolVersion+skills+filename:agent-card.json'
+[2026-02-16T11:03:28.214674]   → 43 results, processing 43
+[2026-02-16T11:03:30.216291] GitHub: searching 'path:.well-known+filename:agent.json'
+[2026-02-16T11:03:31.991760]   → 40 results, processing 40
+[2026-02-16T11:03:33.997000] GitHub: searching 'path:.well-known+filename:agent-card.json'
+[2026-02-16T11:03:35.943790]   → 13 results, processing 13
+[2026-02-16T11:03:37.946902] GitHub: searching 'a2a+agent+protocolVersion+language:python'
+[2026-02-16T11:03:39.799311]   → 254 results, processing 100
+[2026-02-16T11:03:41.804613] GitHub: searching 'a2a+agent+protocolVersion+language:typescript'
+[2026-02-16T11:03:43.558572]   → 592 results, processing 100
+[2026-02-16T11:03:45.563810] GitHub: searching 'well-known+agent.json+deploy'
+[2026-02-16T11:03:47.710130]   → 1512 results, processing 100
+[2026-02-16T11:03:49.715262] GitHub: found 321 unique repos, checking deployments...
+[2026-02-16T11:03:52.901535]   📦 1800-Lottery Affiliate Agent in 1800Lottery/Background-Security-Partnerships (checking deployment...)
+[2026-02-16T11:03:53.407568]   📦 1800-Lottery Affiliate Agent in 1800Lottery/Background-Security-Partnerships (checking deployment...)
+[2026-02-16T11:04:49.350697] 🟢 FOUND: Babylon (12 skills) → https://babylon.market/.well-known/agent-card.json
+[2026-02-16T11:05:00.518691]   📦 Email Digest Agent in Chinweike99/email_digest_agent (checking deployment...)
+[2026-02-16T11:05:01.006574]   📦 Email Digest Agent in Chinweike99/email_digest_agent (checking deployment...)
+[2026-02-16T11:05:02.484497]   📦 NurseSim-Triage in Clinical-Quality-Artifical-Intelligence/NurseSim-RL (checking deployment...)
+[2026-02-16T11:05:02.961865]   📦 NurseSim-Triage in Clinical-Quality-Artifical-Intelligence/NurseSim-RL (checking deployment...)
+[2026-02-16T11:05:32.996386]   📦 Monkey-Coder Agent in GaryOcean428/monkey-coder (checking deployment...)
+[2026-02-16T11:05:33.454113]   📦 Monkey-Coder Agent in GaryOcean428/monkey-coder (checking deployment...)
+[2026-02-16T11:06:09.683249]   📦 Sample Agent in MERC13/sample-agent (checking deployment...)
+[2026-02-16T11:06:10.170741]   📦 Sample Agent in MERC13/sample-agent (checking deployment...)
+[2026-02-16T11:06:44.018279]   📦 AnsibleAgent in RunStack-AI/ansible (checking deployment...)
+[2026-02-16T11:06:44.498087]   📦 AnsibleAgent in RunStack-AI/ansible (checking deployment...)
+[2026-02-16T11:06:46.155080]   📦 AudioProcessor in RunStack-AI/audio_toolbox_mcp (checking deployment...)
+[2026-02-16T11:06:46.672785]   📦 AudioProcessor in RunStack-AI/audio_toolbox_mcp (checking deployment...)
+[2026-02-16T11:06:48.330087]   📦 openrouter_validator in RunStack-AI/openrouter_provider_validator (checking deployment...)
+[2026-02-16T11:06:48.831569]   📦 openrouter_validator in RunStack-AI/openrouter_provider_validator (checking deployment...)
+[2026-02-16T11:06:53.692056]   📦 Selemene Engine in Sheshiyer/Selemene-engine (checking deployment...)
+[2026-02-16T11:06:54.170762]   📦 Selemene Engine in Sheshiyer/Selemene-engine (checking deployment...)
+[2026-02-16T11:07:02.034767]   📦 APE AI Agent in SpeedV/APE-AI-Agent (checking deployment...)
+[2026-02-16T11:07:02.527090]   📦 APE AI Agent in SpeedV/APE-AI-Agent (checking deployment...)
+[2026-02-16T11:07:14.290817]   📦 White Agent - RCT Analyzer in VijayKumarPrakash/agent-hypo (checking deployment...)
+[2026-02-16T11:07:14.780070]   📦 White Agent - RCT Analyzer in VijayKumarPrakash/agent-hypo (checking deployment...)
+[2026-02-16T11:07:42.041947]   📦 Global Autonomous Marketing System in abandini/autonomous-marketing-agent (checking deployment...)
+[2026-02-16T11:07:42.537110]   📦 Global Autonomous Marketing System in abandini/autonomous-marketing-agent (checking deployment...)
+[2026-02-16T11:09:09.437408]   📦 GasRoute Oracle in basstimam/gasroute-oracle (checking deployment...)
+[2026-02-16T11:09:12.734900] 🟢 FOUND: GasRoute Oracle (1 skills) → https://gasroute-oracle-production.up.railway.app/.well-known/agent.json
+[2026-02-16T11:09:14.104627]   📦 Market Moodboard Agent in basstimam/jatevo-moodboard-agent (checking deployment...)
+[2026-02-16T11:10:25.383869]   📦 Docker Security Agent in doogie-bigmack/a2a_mcp_demo (checking deployment...)
+[2026-02-16T11:10:25.966112]   📦 Docker Security Agent in doogie-bigmack/a2a_mcp_demo (checking deployment...)
+[2026-02-16T11:10:30.727355] 🟢 FOUND: UCP Shopify Bridge Agent (3 skills) → https://shopify-ucp-bridge.vercel.app/.well-known/agent-card.json
+[2026-02-16T11:10:45.388550] 🟢 FOUND: product_catalog_agent (2 skills) → https://esk000.github.io/AIAgentsIntensive/.well-known/agent-card.json
+[2026-02-16T11:11:02.164205]   📦 YouTube Transcription Agent in gilbertsahumada/erc8004-course (checking deployment...)
+[2026-02-16T11:11:02.685065]   📦 YouTube Transcription Agent in gilbertsahumada/erc8004-course (checking deployment...)
+[2026-02-16T11:11:20.636298]   📦 IntentQL Demo Store in greenhill32/intentql (checking deployment...)
+[2026-02-16T11:11:21.123043]   📦 IntentQL Demo Store in greenhill32/intentql (checking deployment...)
+[2026-02-16T11:11:28.851798]   📦 XKCD Comic Agent in hemanth/A2A-XKCD (checking deployment...)
+[2026-02-16T11:11:29.348413]   📦 XKCD Comic Agent in hemanth/A2A-XKCD (checking deployment...)
+[2026-02-16T11:11:39.567998]   📦 browser-agent in inference-gateway/browser-agent (checking deployment...)
+[2026-02-16T11:11:40.069502]   📦 browser-agent in inference-gateway/browser-agent (checking deployment...)
+[2026-02-16T11:11:41.523918]   📦 documentation-agent in inference-gateway/documentation-agent (checking deployment...)
+[2026-02-16T11:11:42.004086]   📦 documentation-agent in inference-gateway/documentation-agent (checking deployment...)
+[2026-02-16T11:11:43.203157]   📦 google-calendar-agent in inference-gateway/google-calendar-agent (checking deployment...)
+[2026-02-16T11:11:43.717422]   📦 google-calendar-agent in inference-gateway/google-calendar-agent (checking deployment...)
+[2026-02-16T11:11:44.856054]   📦 grafana-agent in inference-gateway/grafana-agent (checking deployment...)
+[2026-02-16T11:11:45.319578]   📦 grafana-agent in inference-gateway/grafana-agent (checking deployment...)
+[2026-02-16T11:11:46.524885]   📦 mock-agent in inference-gateway/mock-agent (checking deployment...)
+[2026-02-16T11:11:46.998714]   📦 mock-agent in inference-gateway/mock-agent (checking deployment...)
+[2026-02-16T11:11:48.168641]   📦 n8n-agent in inference-gateway/n8n-agent (checking deployment...)
+[2026-02-16T11:11:48.661258]   📦 n8n-agent in inference-gateway/n8n-agent (checking deployment...)
+[2026-02-16T11:11:49.680935]   📦 Rust A2A Server in inference-gateway/rust-adk (checking deployment...)
+[2026-02-16T11:11:50.190788]   📦 Rust A2A Server in inference-gateway/rust-adk (checking deployment...)
+[2026-02-16T11:11:54.616416]   📦 ESM Spectral Assessor in ipsissima/esm-agentbench (checking deployment...)
+[2026-02-16T11:11:55.096705]   📦 ESM Spectral Assessor in ipsissima/esm-agentbench (checking deployment...)
+[2026-02-16T11:12:39.646868]   📦 NRL CMD Agentic Actions in malwarescan/AIvisibility (checking deployment...)
+[2026-02-16T11:12:40.146599]   📦 NRL CMD Agentic Actions in malwarescan/AIvisibility (checking deployment...)
+[2026-02-16T11:12:40.799663] 🟢 FOUND: NRL CMD Agentic Actions (0 skills) → https://www.nrlcmd.com/.well-known/agent.json
+[2026-02-16T11:12:41.713318]   📦 Test ES Module Agent in melvincarvalho/aam (checking deployment...)
+[2026-02-16T11:12:42.204055]   📦 Test ES Module Agent in melvincarvalho/aam (checking deployment...)
+[2026-02-16T11:12:55.766985]   📦 Multi-Agent Sentiment Analysis Coordinator in mietheweirdo/multi-ai-agents-for-sentiment-analysis (checking deployment...)
+[2026-02-16T11:12:56.247271]   📦 Multi-Agent Sentiment Analysis Coordinator in mietheweirdo/multi-ai-agents-for-sentiment-analysis (checking deployment...)
+[2026-02-16T11:13:18.534782] Resume: 3232 previously checked URLs
+[2026-02-16T11:13:18.535138] Resume: 11 previously discovered agents
+[2026-02-16T11:13:18.535294] ━━━ STRATEGY: Hosting Platform Brute-Force ━━━
+[2026-02-16T11:13:18.535727] Platforms: checking 2268 URLs (108 names × 21 platforms)...
+[2026-02-16T11:13:24.245579]   ... 200/2268 checked (0 found this run)
+[2026-02-16T11:13:34.986022]   ... 400/2268 checked (0 found this run)
+[2026-02-16T11:13:43.668502]   ... 600/2268 checked (0 found this run)
+[2026-02-16T11:13:53.167702]   ... 800/2268 checked (0 found this run)
+[2026-02-16T11:14:00.881995]   ... 1000/2268 checked (0 found this run)
+[2026-02-16T11:14:09.369789] 🟢 FOUND: NewsAgent (1 skills) → https://news-agent.koyeb.app/.well-known/agent-card.json
+[2026-02-16T11:14:15.614544]   ... 1200/2268 checked (1 found this run)
+[2026-02-16T11:14:29.008560]   ... 1400/2268 checked (1 found this run)
+[2026-02-16T11:14:40.600208]   ... 1600/2268 checked (1 found this run)
+[2026-02-16T11:14:49.961507]   ... 1800/2268 checked (1 found this run)
+[2026-02-16T11:14:59.096463]   ... 2000/2268 checked (1 found this run)
+[2026-02-16T11:15:10.457082]   ... 2200/2268 checked (1 found this run)
+[2026-02-16T11:15:24.166677] Platforms: done, checked 2268
+[2026-02-16T11:15:24.171457] Generating registration script...
+[2026-02-16T11:15:24.172566] Registration script: /Users/tim/Code/tim/agentpages/scripts/register-discovered.sh
+[2026-02-16T11:15:27.934254] Resume: 6073 previously checked URLs
+[2026-02-16T11:15:27.934605] Resume: 12 previously discovered agents
+[2026-02-16T11:15:27.934668] ━━━ STRATEGY: Domain scanning (AI/tech companies) ━━━
+[2026-02-16T11:15:27.934762] Domains: checking 104 domains...
+[2026-02-16T11:15:45.816063] Domains: done
+[2026-02-16T11:15:45.819783] ━━━ STRATEGY: Certificate Transparency Logs ━━━
+[2026-02-16T11:15:45.819855] CT: 'a2a-agent.%'
+[2026-02-16T11:15:56.665376] CT: 'a2a-%.vercel.app'
+[2026-02-16T11:15:59.833377]   → Parse error
+[2026-02-16T11:16:01.339086] CT: 'agent-%.fly.dev'
+[2026-02-16T11:16:10.302583]   → Parse error
+[2026-02-16T11:16:11.808196] CT: '%-agent.vercel.app'
+[2026-02-16T11:16:28.976811]   → Parse error
+[2026-02-16T11:16:30.481352] CT: '%-agent.fly.dev'
+[2026-02-16T11:16:38.374941]   → 404
+[2026-02-16T11:16:39.877295] CT: '%-agent.onrender.com'
+[2026-02-16T11:16:40.053594]   → 502
+[2026-02-16T11:16:41.558899] CT: '%-agent.railway.app'
+[2026-02-16T11:16:41.733129]   → 502
+[2026-02-16T11:16:43.238469] CT: '%-a2a.vercel.app'
+[2026-02-16T11:16:43.754215]   → Parse error
+[2026-02-16T11:16:45.259532] CT: 'agentcard.%'
+[2026-02-16T11:17:01.562634]   → 862 certs, 61 domains so far
+[2026-02-16T11:17:03.067180] CT: 'agent-card.%'
+[2026-02-16T11:17:23.205648]   → The read operation timed out
+[2026-02-16T11:17:24.708342] CT: 'agentpages.%'
+[2026-02-16T11:17:28.759023]   → 404
+[2026-02-16T11:17:30.260525] CT: 'agentregistry.%'
+[2026-02-16T11:17:37.910400]   → 202 certs, 88 domains so far
+[2026-02-16T11:17:39.412146] CT: checking 88 domains...
+[2026-02-16T11:17:55.926289] CT: done
+[2026-02-16T11:17:55.932680] Generating registration script...
+[2026-02-16T11:17:55.934644] Registration script: /Users/tim/Code/tim/agentpages/scripts/register-discovered.sh
+[2026-02-16T11:17:59.755834] Resume: 6445 previously checked URLs
+[2026-02-16T11:17:59.756165] Resume: 12 previously discovered agents
+[2026-02-16T11:17:59.756219] ━━━ STRATEGY: Perplexity Search ━━━
+[2026-02-16T11:17:59.756280] Perplexity: 'live deployed A2A agent card .well-known/agent.json URL 2025...'
+[2026-02-16T11:18:03.488254]   → Found 4 URLs to check
+[2026-02-16T11:18:05.112625] Perplexity: 'site:vercel.app OR site:fly.dev agent.json protocolVersion A...'
+[2026-02-16T11:18:08.739931]   → Found 0 URLs to check
+[2026-02-16T11:18:09.745237] Perplexity: 'A2A protocol agent deployed public endpoint 2026...'
+[2026-02-16T11:18:14.439987]   → Found 1 URLs to check
+[2026-02-16T11:18:15.504036] Perplexity: 'Google A2A agent card example live demo endpoint...'
+[2026-02-16T11:18:20.521788]   → Found 3 URLs to check
+[2026-02-16T11:18:22.391214] Perplexity: done
+[2026-02-16T11:18:22.396233] Generating registration script...
+[2026-02-16T11:18:22.397137] Registration script: /Users/tim/Code/tim/agentpages/scripts/register-discovered.sh
